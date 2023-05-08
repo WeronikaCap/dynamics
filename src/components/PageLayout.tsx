@@ -38,13 +38,13 @@ function PageLayout() {
   return (
     <>
       <p>Welcome, {username}</p>
-      {data ? (
+      {/* {data ? (
         data.map((contact: any, id: any) => {
           return <div key={id}>{contact.fullname}</div>;
         })
       ) : (
         <div>please wait...</div>
-      )}
+      )} */}
     </>
   );
 }

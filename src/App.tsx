@@ -5,6 +5,7 @@ import {
 import { SignInButton } from "./components/SignInButton";
 import { SignOutButton } from "./components/SignOutButton";
 import PageLayout from "./components/PageLayout";
+import ArticleSection from "./components/home/ArticleSection";
 
 // Remember that MsalProvider must be rendered somewhere higher up in the component tree
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <p>This will only render if a user is not signed-in.</p>
         <SignInButton />
       </UnauthenticatedTemplate>
+      <ArticleSection />
     </>
   );
 }
