@@ -1,12 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faTwitter, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import {
+  faInstagram,
+  faTwitter,
+  faFacebook,
+} from "@fortawesome/free-brands-svg-icons";
+import Logo from "../assets/logo.svg";
 
 const Footer = () => (
-  <div className="fixed bottom-0 left-0 w-full bg-main-dark text-main-gray px-8 py-12">
+  <div className="w-screen bottom-0 left-0 w-full bg-main-dark text-main-gray px-8 py-12">
     <div className="text-center pb-8">
-      <p className="text-lg text-light-gray font-bold tracking-widest pb-4">
-        CONTOSO
-      </p>
+      <div className="flex pb-4 justify-center">
+        <img src={Logo} alt="Contoso logo" />
+        <p className="pl-3 text-lg text-light-gray font-bold tracking-widest">
+          CONTOSO
+        </p>
+      </div>
       <p className="">This site uses sample data for demonstration purposes.</p>
     </div>
     <div className="flex justify-between pt-4 border-t border-gray-600">

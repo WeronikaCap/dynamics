@@ -5,7 +5,7 @@ import {
 import { SignInButton } from "./components/SignInButton";
 import { SignOutButton } from "./components/SignOutButton";
 import PageLayout from "./components/PageLayout";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
 
 // Remember that MsalProvider must be rendered somewhere higher up in the component tree
 function App() {
