@@ -8,6 +8,9 @@ export default {
         "light-gray": "#DAE0E6",
         "main-gray": "#A5ACBA",
       },
+      maxWidth: {
+        "screen-3xl": "1920px",
+      },
     },
   },
   plugins: [],
