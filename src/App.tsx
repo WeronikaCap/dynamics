@@ -7,6 +7,7 @@ import { SignOutButton } from "./components/SignOutButton";
 
 import Navigation from "./components/Layout/Navigation";
 import PageLayout from "./components/PageLayout";
+import Footer from "./components/Footer";
 
 // Remember that MsalProvider must be rendered somewhere higher up in the component tree
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <p>This will only render if a user is not signed-in.</p>
         <SignInButton />
       </UnauthenticatedTemplate>
+      <Footer />
     </>
   );
 }
