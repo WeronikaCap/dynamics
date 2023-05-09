@@ -10,6 +10,9 @@ export default {
         "main-gray": "#A5ACBA",
         "primary": "#E8EFFD"
       },
+      maxWidth: {
+        "screen-3xl": "1920px",
+      },
     },
   },
   plugins: [],
