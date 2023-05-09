@@ -5,12 +5,12 @@ import {
 import { SignInButton } from "./components/SignInButton";
 import { SignOutButton } from "./components/SignOutButton";
 import PageLayout from "./components/PageLayout";
-import ArticleSection from "./components/home/ArticleSection";
+import ArticleSection from "./components/articleSection/ArticleSection";
 
 // Remember that MsalProvider must be rendered somewhere higher up in the component tree
 function App() {
   return (
-    <>
+    <div className="w-screen">
       <AuthenticatedTemplate>
         <p>This will only render if a user is signed-in.</p>
         <SignOutButton />
@@ -21,7 +21,7 @@ function App() {
         <SignInButton />
       </UnauthenticatedTemplate>
       <ArticleSection />
-    </>
+    </div>
   );
 }
 

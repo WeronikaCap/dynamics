@@ -1,4 +1,6 @@
 import ArticleSlider from "./ArticleSlider";
+import ArticleCard from "./ArticleCard";
+import data from './mock.json';
 
 const ArticleSection = () => {
   return (
@@ -12,8 +14,19 @@ const ArticleSection = () => {
         </p>
       </div>
       <div>
-        <div className="max-w-7xl overflow-hidden">
+        <div className="max-w-7xl overflow-hidden w-screen">
           <ArticleSlider>
+            {data.map((item) => (
+              <ArticleCard
+                key={item.id}
+                type={item.__typename}
+                articleTitle={item.title}
+                articleImage={item.image}
+                articleRating={item.rating}
+                articleDescription={item.content}
+                publicationDate={item.publicationDate}
+              />
+            ))}
           </ArticleSlider>
         </div>
       </div>
