@@ -18,7 +18,7 @@ const ArticleCard = ({
   image,
 }: Props) => {
   return (
-    <div className="relative border-solid border border-light-gray rounded-xl  mx-4">
+    <div className="relative border-solid border border-light-gray rounded-xl mx-4 bg-white">
         <img src={image} alt="" className="rounded-t-xl w-screen"></img>
       <div className="flex flex-row justify-between px-8 gap-8 pt-6 pb-5">
         <div className="flex flex-row">
@@ -30,7 +30,7 @@ const ArticleCard = ({
         <div>{rating}</div>
       </div>
       <div className="px-8">
-        <div className="text-2xl font-semibold">{title}</div>
+        <div className="text-2xl font-semibold text-black">{title}</div>
         <p className="text-base">{description}</p>
         <div className="flex flex-row gap-2.5 items-center
          py-6 text-primary-blue font-semibold">

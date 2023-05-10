@@ -70,11 +70,9 @@ const ArticleSlider = ({ children }: Props) => {
 
   console.log(sliderRef);
   return (
-    <div className="mt-20">
       <Slider ref={setSliderRef} {...settings}>
         {children}
       </Slider>
-    </div>
   );
 };
 

@@ -11,6 +11,7 @@ export default {
         "primary": "#E8EFFD",
         "primary-blue": "#437EF7",
         "light-blue": "#F5FAFF",
+        "neutral-gray": "#FAFBFC"
       },
       maxWidth: {
         "screen-3xl": "1920px",
