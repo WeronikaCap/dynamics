@@ -1,23 +1,25 @@
 import {Link} from "react-router-dom"
 
+import Button from '@mui/material/Button';
+
 import ContentContainer from "../ContentContainer"
 
 import Logo from "../../assets/Logo.png"
 
 const Navigation =()=>{
     return <nav className=" bg-primary">
-        <ContentContainer className="flex flex-col items-center lg:flex-row gap-16 lg:h-[86px] ">
+        <ContentContainer className="flex flex-col items-center lg:flex-row gap-16 h-20 ">
             <img className="w-100" src={Logo} alt="Logo" />
-            <div className="flex lg:justify-between lg:flex- grow">
+            <div className="flex lg:justify-between items-center lg:flex- grow">
                 <ul className="flex flex-col lg:flex-row gap-8">
                     <li><Link className="hover:text-base-black" to="/">Home</Link></li>
                     <li><Link className="hover:text-base-black" to="/">Knowledge Base</Link></li>
                     <li><Link className="hover:text-base-black" to="/">Forums</Link></li>
                     <li><Link className="hover:text-base-black" to="/">My Support</Link></li>
                 </ul>
-                <div className="flex flex-col  lg:flex-row gap-6">
-                    <Link to="/">Register</Link>
-                    <Link to="/">Log in</Link>
+                <div className="flex flex-col items-center lg:flex-row gap-6">
+                    <Link to="/" className="text-blue">Register</Link>
+                    <Button variant="contained">Log in</Button>
                 </div>
             </div>
         </ContentContainer>

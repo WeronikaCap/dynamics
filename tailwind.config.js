@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  important:"#root",
   theme: {
     extend: {
       colors: {
@@ -11,7 +12,8 @@ export default {
         "primary": "#E8EFFD",
         "primary-blue": "#437EF7",
         "light-blue": "#F5FAFF",
-        "neutral-gray": "#FAFBFC"
+        "neutral-gray": "#FAFBFC",
+        "blue": "#1976d2"
       },
       maxWidth: {
         "screen-3xl": "1920px",
