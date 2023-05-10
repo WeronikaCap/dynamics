@@ -7,7 +7,10 @@ export default {
         "main-dark": "#1c2534",
         "light-gray": "#DAE0E6",
         "main-gray": "#A5ACBA",
+        "primary-blue": "#437EF7",
+        "light-blue": "#F5FAFF",
       },
+      
     },
   },
   plugins: [],

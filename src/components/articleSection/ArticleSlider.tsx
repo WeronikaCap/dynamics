@@ -3,8 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "./Button";
-import ArrowLeft from '../../assets/arrowLeft.svg';
-import ArrowRight from '../../assets/arrowRight.svg';
+import ArrowLeft from "../../assets/arrowLeft.svg";
+import ArrowRight from "../../assets/arrowRight.svg";
 
 interface Props {
   children?: any;
@@ -13,11 +13,45 @@ interface Props {
 const ArticleSlider = ({ children }: Props) => {
   const [sliderRef, setSliderRef] = useState<any>(null);
 
+  const NextArrow = (props: any) => {
+    const { onClick } = props;
+    return (
+      <button
+        onClick={onClick}
+        className={`absolute top-[-55px] right-6 z-1 border border-light-gray rounded-xl px-5.5 py-4 ${
+          onClick ? "opacity-100" : "opacity-20"
+        }`}
+      >
+        <img src={ArrowRight} />
+      </button>
+    );
+  };
+
+  const PrevArrow = (props: any) => {
+    const { onClick } = props;
+
+    return (
+      <button
+        onClick={onClick}
+        className={`absolute top-[-55px] right-20 z-1 border border-light-gray rounded-xl px-5.5 py-4 ${
+          onClick ? "opacity-100" : "opacity-20"
+        }`}
+      >
+        <img src={ArrowLeft} />
+      </button>
+    );
+  };
+
   const settings = {
-    arrows: false,
+    arrows: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: false,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    speed: 1000,
+    autoplaySpeed: 3000,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -34,12 +68,9 @@ const ArticleSlider = ({ children }: Props) => {
     ],
   };
 
+  console.log(sliderRef);
   return (
-    <div>
-      <div className="flex justify-end gap-2.5 mx-4 my-1.5">
-        <Button onClick={sliderRef?.slickPrev}><img src={ArrowLeft}/></Button>
-        <Button onClick={sliderRef?.slickNext}><img src={ArrowRight}/></Button>
-      </div>
+    <div className="mt-20">
       <Slider ref={setSliderRef} {...settings}>
         {children}
       </Slider>
