@@ -30,7 +30,7 @@ const ArticleSection = () => {
           </ArticleSlider>
         </div>
       </div>
-      <button className="my-11">Read More Articles</button>
+      <button className="my-11 bg-primary-blue text-white">Read More Articles</button>
     </div>
   );
 };
