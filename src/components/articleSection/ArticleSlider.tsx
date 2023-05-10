@@ -7,7 +7,7 @@ import ArrowLeft from "../../assets/arrowLeft.svg";
 import ArrowRight from "../../assets/arrowRight.svg";
 
 interface Props {
-  children?: any;
+  children?: React.ReactNode;
 }
 
 const ArticleSlider = ({ children }: Props) => {
