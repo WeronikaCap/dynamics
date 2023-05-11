@@ -9,7 +9,7 @@ import Logo from "../../assets/Logo.png"
 const Navigation =()=>{
     return <nav className=" bg-primary">
         <ContentContainer className="flex flex-col items-center lg:flex-row gap-16 h-20 ">
-            <img className="w-100" src={Logo} alt="Logo" />
+            <Link to="/"><img className="w-100" src={Logo} alt="Logo" /></Link>
             <div className="flex lg:justify-between items-center lg:flex- grow">
                 <ul className="flex flex-col lg:flex-row gap-8">
                     <li><Link className="hover:text-base-black" to="/">Home</Link></li>
