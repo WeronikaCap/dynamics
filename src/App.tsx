@@ -15,7 +15,7 @@ function App() {
   return (
     <>
     <Navigation/>
-    <Header title="Customer Self-Service" description="Type in your search phrase or question and use our extensive database of answers"/>
+    <Header placeHolderText="Search" title="Customer Self-Service" description="Type in your search phrase or question and use our extensive database of answers" backgroundImage="/src/assets/Hero-BG.png"/>
       <AuthenticatedTemplate>
         <p>This will only render if a user is signed-in.</p>
         <SignOutButton />
