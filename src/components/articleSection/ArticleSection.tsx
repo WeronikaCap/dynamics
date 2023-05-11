@@ -1,5 +1,5 @@
 import ArticleSlider from "./ArticleSlider";
-import ArticleCard from "./ArticleCard";
+import ArticleTile from "./ArticleTile";
 import ArticleHeader from "./ArticleHeader";
 import ContentContainer from "../ContentContainer";
 import data from "./mock.json";
@@ -11,7 +11,7 @@ const ArticleSection = () => {
       <div className="screen-3xl w-full mt-8">
         <ArticleSlider>
           {data.map((item) => (
-            <ArticleCard
+            <ArticleTile
               key={item.id}
               type={item.__typename}
               title={item.title}

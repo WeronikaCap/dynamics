@@ -11,7 +11,7 @@ interface Props {
   type: string;
 }
 
-const ArticleCard = ({
+const ArticleTile = ({
   type,
   publicationDate,
   rating,
@@ -50,4 +50,4 @@ const ArticleCard = ({
   );
 };
 
-export default ArticleCard;
+export default ArticleTile;
