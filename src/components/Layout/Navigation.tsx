@@ -4,9 +4,10 @@ import Button from '@mui/material/Button';
 
 import ContentContainer from "components/ContentContainer";
 
-import Logo from "assets/Hero-BG.png"
+import Logo from "assets/Logo.png"
 
 const Navigation =()=>{
+    console.log(Logo)
     return <nav className=" bg-primary">
         <ContentContainer className="flex flex-col items-center lg:flex-row gap-16 h-20 ">
             <Link to="/"><img className="w-100" src={Logo} alt="Logo" /></Link>
