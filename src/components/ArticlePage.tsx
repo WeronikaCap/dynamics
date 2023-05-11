@@ -1,4 +1,4 @@
-import ContentContainer from "./ContentContainer";
+import ContentContainer from "./Layout/ContentContainer";
 
 const ArticlePage = () => {
   return (

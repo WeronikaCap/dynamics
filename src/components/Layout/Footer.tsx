@@ -5,7 +5,7 @@ import {
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import Logo from "../../assets/logo.svg";
-import ContentContainer from "../ContentContainer";
+import ContentContainer from "./ContentContainer";
 
 const Footer = () => (
   <footer className="bg-main-dark text-main-gray py-12">
