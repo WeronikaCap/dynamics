@@ -23,7 +23,7 @@ const Header =(props: HeaderProps) => {
     const {title, description, backgroundImage, paddingSmall, placeHolderText} = props;
 
     return (
-        <header  style={{'--image-url': `url(${backgroundImage})`}} className={`bg-[image:var(--image-url)] bg-cover bg-no-repeat ${paddingSmall ? "pt-12 pb-12" : "pt-32 pb-32"}`}>
+        <header style={{'--image-url': `url(${backgroundImage})`}} className={`bg-[image:var(--image-url)] bg-cover bg-no-repeat ${paddingSmall ? "pt-12 pb-12" : "pt-32 pb-32"}`}>
             <div className={`w-[760px] m-auto flex flex-col items-center`}>
                 <h1 className="pb-4 text-neutral-black font-bold">{title}</h1>
                 {description && <p className="pb-12">{description}</p>}
