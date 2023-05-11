@@ -20,11 +20,10 @@ function App() {
         <SignOutButton />
         <PageLayout />
       </AuthenticatedTemplate>
-      {/* <UnauthenticatedTemplate>
+      <UnauthenticatedTemplate>
         <p>This will only render if a user is not signed-in.</p>
         <SignInButton />
-      </UnauthenticatedTemplate> */}
-      <ArticlePage />
+      </UnauthenticatedTemplate>
       <Footer />
     </>
   );
