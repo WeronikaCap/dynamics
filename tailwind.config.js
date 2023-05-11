@@ -11,6 +11,9 @@ export default {
         "light-gray": "#DAE0E6",
         "main-gray": "#A5ACBA",
         "primary": "#E8EFFD",
+        "primary-blue": "#437EF7",
+        "light-blue": "#F5FAFF",
+        "neutral-gray": "#FAFBFC",
         "blue": "#1976d2"
       },
       maxWidth: {
