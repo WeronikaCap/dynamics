@@ -4,11 +4,12 @@ import {
   faTwitter,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
-import Logo from "../assets/logo.svg";
-import ContentContainer from "./ContentContainer";
+import Logo from "../../assets/logo.svg";
+import ContentContainer from "../ContentContainer";
 
 const Footer = () => (
-  <ContentContainer className="bottom-0 left-0 w-full bg-main-dark text-main-gray py-12">
+  <footer className="bg-main-dark text-main-gray py-12">
+    <ContentContainer>
       <div className="text-center pb-8">
         <div className="flex pb-4 justify-center">
           <img src={Logo} alt="Contoso logo" />
@@ -27,7 +28,8 @@ const Footer = () => (
           <FontAwesomeIcon className="px-6" size="xl" icon={faTwitter} />
           <FontAwesomeIcon size="xl" icon={faFacebook} />
         </div>
-    </div>
-  </ContentContainer>
+      </div>
+    </ContentContainer>
+  </footer>
 );
 export default Footer;
