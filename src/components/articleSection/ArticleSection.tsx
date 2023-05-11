@@ -17,6 +17,7 @@ const ArticleSection = () => {
               title={item.title}
               image={item.image}
               rating={item.rating}
+              ratingCount={item.ratingCount}
               description={item.content}
               publicationDate={item.publicationDate}
             />
