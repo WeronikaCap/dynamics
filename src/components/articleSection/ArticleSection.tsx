@@ -8,7 +8,7 @@ const ArticleSection = () => {
   return (
     <ContentContainer className="flex flex-col items-center w-full bg-neutral-gray">
       <ArticleHeader/>
-      <div className="max-w-7xl w-full mt-8">
+      <div className="screen-3xl w-full mt-8">
         <ArticleSlider>
           {data.map((item) => (
             <ArticleCard

@@ -2,7 +2,6 @@ import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Button from "./Button";
 import ArrowLeft from "../../assets/arrowLeft.svg";
 import ArrowRight from "../../assets/arrowRight.svg";
 
@@ -13,8 +12,11 @@ interface Props {
 const ArticleSlider = ({ children }: Props) => {
   const [sliderRef, setSliderRef] = useState<any>(null);
 
-  const NextArrow = (props: any) => {
-    const { onClick } = props;
+  interface CustomArrowProps {
+    onClick?: React.MouseEventHandler<any> | undefined;
+  }
+
+  const NextArrow = ({ onClick }: CustomArrowProps) => {
     return (
       <button
         onClick={onClick}
@@ -27,9 +29,7 @@ const ArticleSlider = ({ children }: Props) => {
     );
   };
 
-  const PrevArrow = (props: any) => {
-    const { onClick } = props;
-
+  const PrevArrow = ({ onClick }: CustomArrowProps) => {
     return (
       <button
         onClick={onClick}
@@ -68,11 +68,10 @@ const ArticleSlider = ({ children }: Props) => {
     ],
   };
 
-  console.log(sliderRef);
   return (
-      <Slider ref={setSliderRef} {...settings}>
-        {children}
-      </Slider>
+    <Slider ref={setSliderRef} {...settings}>
+      {children}
+    </Slider>
   );
 };
 
