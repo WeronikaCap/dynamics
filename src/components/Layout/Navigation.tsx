@@ -2,9 +2,9 @@ import {Link} from "react-router-dom"
 
 import Button from '@mui/material/Button';
 
-import ContentContainer from "../ContentContainer"
+import ContentContainer from "components/ContentContainer";
 
-import Logo from "../../assets/Logo.png"
+import Logo from "assets/Hero-BG.png"
 
 const Navigation =()=>{
     return <nav className=" bg-primary">
