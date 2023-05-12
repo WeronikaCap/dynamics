@@ -22,7 +22,7 @@ const ArticleTile = ({
 }: Props) => {
   return (
     <div className="relative border-solid border border-light-gray rounded-xl mx-4 bg-white">
-      <img src={image} alt="" className="rounded-t-xl w-screen"></img>
+      <img src={image} alt={image} className="rounded-t-xl w-screen"></img>
       <div className="flex flex-row justify-between px-8 gap-8 pt-6 pb-5">
         <div className="flex flex-row">
           <div className="flex align-center justify-center bg-light-blue w-16 h-7 rounded-l">
