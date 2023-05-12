@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Layout/Header";
 
 import HeroBG from "./assets/Hero-BG.png"
+import ArticlePage from "./components/ArticlePage";
 
 // Remember that MsalProvider must be rendered somewhere higher up in the component tree
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <p>This will only render if a user is not signed-in.</p>
         <SignInButton />
       </UnauthenticatedTemplate>
+      <ArticlePage />
       <Footer />
     </>
   );
