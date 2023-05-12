@@ -25,7 +25,7 @@ const ArticleHeader = ({ articleData }: { articleData: Article }) => {
     img,
   } = articleData;
 
-  var formattedDate = new Date(publishingDate).toLocaleDateString("en-us", {
+  const formattedDate = new Date(publishingDate).toLocaleDateString("en-us", {
     year: "numeric",
     month: "long",
     day: "numeric",
