@@ -7,7 +7,7 @@ const data = {
   subtitle: "Bosch Greenstar Condensing Boilers Superior Design & Components",
   tags: ["Bosch1", "Bosch2"],
   author: "Dave Jones",
-  publishingDate: "11/10/2022",
+  publishingDate: "2018-09-20T14:25:52Z",
   rating: 4.5,
   ratingCount: 14,
   img: Logo,

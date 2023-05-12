@@ -6,7 +6,7 @@ interface Article {
   title: string;
   subtitle: string;
   tags: string[];
-  img:string;
+  img: string;
   author: string;
   publishingDate: string;
   rating: number;
@@ -14,8 +14,23 @@ interface Article {
 }
 
 const ArticleHeader = ({ articleData }: { articleData: Article }) => {
-  const { title, subtitle, tags, author, publishingDate, rating, ratingCount, img } =
-    articleData;
+  const {
+    title,
+    subtitle,
+    tags,
+    author,
+    publishingDate,
+    rating,
+    ratingCount,
+    img,
+  } = articleData;
+
+  var formattedDate = new Date(publishingDate).toLocaleDateString("en-us", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <div className="flex flex-col justify-between h-[60%] mt-12 ">
       <h1 className="text-base-black font-semibold">{title}</h1>
@@ -26,11 +41,11 @@ const ArticleHeader = ({ articleData }: { articleData: Article }) => {
         ))}
       </div>
       <div className="flex justify-between items-center h-8 w-1/3">
-        <div className="flex w-1/3 text-base-black">
+        <div className="flex w-fit text-base-black">
           <img src={img} alt="User avatar" />
           <p className="pl-2 font-medium">{author}</p>
         </div>
-        <p>{publishingDate}</p>
+        <p>{formattedDate}</p>
         <div className="flex items-center">
           <Rating
             name="read-only"
