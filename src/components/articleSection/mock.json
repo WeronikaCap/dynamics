@@ -3,7 +3,8 @@
     "id": "1",
     "title": "Adidas Sneakers",
     "image": "https://picsum.photos/450/200",
-    "rating": "",
+    "rating": 4,
+    "ratingCount": 14,
     "content": "Adidas Stan Smith is a tennis shoe made by Adidas, and first launched in 1965. Originally named Adidas Robert Haillet",
     "publicationDate": "25 Apr.2022",
     "__typename": "Article"
@@ -12,7 +13,8 @@
     "id": "2",
     "title": "Adidas Sneakers",
     "image": "https://picsum.photos/450/200",
-    "rating": "",
+    "rating": 4,
+    "ratingCount": 14,
     "content": "Adidas Stan Smith is a tennis shoe made by Adidas, and first launched in 1965. Originally named Adidas Robert Haillet",
     "publicationDate": "25 Apr.2022",
     "__typename": "Article"
@@ -21,7 +23,8 @@
     "id": "3",
     "title": "Adidas Sneakers",
     "image": "https://picsum.photos/450/200",
-    "rating": "",
+    "rating": 4,
+    "ratingCount": 14,
     "content": "Adidas Stan Smith is a tennis shoe made by Adidas, and first launched in 1965. Originally named Adidas Robert Haillet",
     "publicationDate": "25 Apr.2022",
     "__typename": "Article"
@@ -30,7 +33,8 @@
     "id": "4",
     "title": "Adidas Sneakers",
     "image": "https://picsum.photos/450/200",
-    "rating": "",
+    "rating": 4,
+    "ratingCount": 14,
     "content": "Adidas Stan Smith is a tennis shoe made by Adidas, and first launched in 1965. Originally named Adidas Robert Haillet",
     "publicationDate": "25 Apr.2022",
     "__typename": "Article"
@@ -39,7 +43,8 @@
     "id": "5",
     "title": "Adidas Sneakers",
     "image": "https://picsum.photos/450/200",
-    "rating": "",
+    "rating": 4,
+    "ratingCount": 14,
     "content": "Adidas Stan Smith is a tennis shoe made by Adidas, and first launched in 1965. Originally named Adidas Robert Haillet",
     "publicationDate": "25 Apr.2022",
     "__typename": "Article"
@@ -48,7 +53,8 @@
     "id": "6",
     "title": "Adidas Sneakers",
     "image": "https://picsum.photos/450/200",
-    "rating": "",
+    "rating": 4,
+    "ratingCount": 14,
     "content": "Adidas Stan Smith is a tennis shoe made by Adidas, and first launched in 1965. Originally named Adidas Robert Haillet",
     "publicationDate": "25 Apr.2022",
     "__typename": "Article"
