@@ -1,13 +1,13 @@
 import ArticleSlider from "./ArticleSlider";
 import ArticleTile from "./ArticleTile";
 import ArticleHeader from "./ArticleHeader";
-import ContentContainer from "../ContentContainer";
+import ContentContainer from "components/Layout/ContentContainer";
 import data from "./mock.json";
 
 const ArticleSection = () => {
   return (
     <ContentContainer className="flex flex-col items-center w-full bg-neutral-gray">
-      <ArticleHeader/>
+      <ArticleHeader />
       <div className="screen-3xl w-full mt-8">
         <ArticleSlider>
           {data.map((item) => (
