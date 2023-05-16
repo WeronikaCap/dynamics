@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
-
 import Button from "@mui/material/Button";
-
-import ContentContainer from "./ContentContainer";
-
-import Logo from "../../assets/Logo.png";
+import ContentContainer from "components/ContentContainer";
+import Logo from "assets/Logo.png";
 
 const Navigation = () => {
   return (
