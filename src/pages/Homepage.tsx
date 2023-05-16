@@ -5,16 +5,13 @@ import {
 import { SignInButton } from "components/SignInButton";
 import { SignOutButton } from "components/SignOutButton";
 
-import Navigation from "components/Layout/Navigation";
 import PageLayout from "components/PageLayout";
 import ArticleSection from "components/articleSection/ArticleSection";
-import Footer from "components/Layout/Footer";
 import Header from "components/Layout/Header";
 
 const Homepage = () => {
   return (
     <>
-      <Navigation />
       <Header
         placeHolderText="Search"
         title="Customer Self-Service"
@@ -31,7 +28,6 @@ const Homepage = () => {
         <SignInButton />
       </UnauthenticatedTemplate>
       <ArticleSection />
-      <Footer />
     </>
   );
 };
