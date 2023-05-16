@@ -3,6 +3,7 @@ import ContentContainer from "./ContentContainer";
 import Logo from "../assets/logo.svg";
 import { Rating } from "@mui/material";
 import "./ArticlePage.css";
+import ArticleContent from "./ArticleContent";
 
 const data = {
   title: "Boiler A Bosch Greenstar",
@@ -24,32 +25,16 @@ const article = `<div data-wrapper="true" style="font-size: 12px; font-family: &
 <div data-wrapper="true" style="font-size: 12px; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, sans-serif"><img align="none" alt="" height="393" data-msdynid="___94981dee-0b59-ed11-9561-6045bd8c9668___" data-msdyntype="data:image/png;base64" src="/api/data/v9.0/msdyn_knowledgearticleimages(94981dee-0b59-ed11-9561-6045bd8c9668)/msdyn_blobfile/$value" style="width: 366px; height: 393px" width="366"></div></div>`;
 
 const ArticlePage = () => {
+  console.log(typeof article);
   return (
     <ContentContainer>
-      <div className="h-80 pl-24">
+      <div className="h-80 pl-28">
         <div className="h-[14%] bg-green-200">Breadcrumbs</div>
         <ArticleHeader articleData={data} />
       </div>
-      <div className="flex mt-12 pl-24">
-        <article className="w-9/12">
-          <div
-            className="h-fit article-content"
-            dangerouslySetInnerHTML={{ __html: article }}
-          ></div>
-          <div className="text-[#272D37] text-2xl text-center py-16">
-            <p className="pb-2">Did you find this article helpfull? </p>
-            <Rating
-              name="rating"
-              value={0}
-              size="large"
-              precision={0.5}
-              onChange={(event, value) =>
-                console.log(`article rating: ${value}`)
-              }
-            />
-          </div>
-        </article>
-        <div className="h-screen w-2/12 bg-pink-200 m-auto">
+      <div className="flex mt-20 pl-28">
+        <ArticleContent article={article} />
+        <div className="h-screen w-3/12 bg-pink-200 mx-auto">
           Article sidebar
         </div>
       </div>
