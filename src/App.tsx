@@ -5,6 +5,7 @@ import Homepage from "pages/Homepage";
 // Remember that MsalProvider must be rendered somewhere higher up in the component tree
 function App() {
   return (
+
       <Routes>
         <Route path="/" element={<Homepage />} />
       </Routes>
