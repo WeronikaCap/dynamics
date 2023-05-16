@@ -8,7 +8,7 @@ import {
   import Navigation from "components/Layout/Navigation";
   import PageLayout from "components/PageLayout";
   import ArticleSection from "components/articleSection/ArticleSection";
-  import Footer from "components/Footer";
+  import Footer from "components/Layout/Footer";
   import Header from "components/Layout/Header";
   
   import HeroBG from "./assets/Hero-BG.png"

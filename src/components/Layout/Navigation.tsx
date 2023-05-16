@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
-import ContentContainer from "components/ContentContainer";
+import ContentContainer from "components/Layout/ContentContainer";
 import Logo from "assets/Logo.png";
 
 const Navigation = () => {

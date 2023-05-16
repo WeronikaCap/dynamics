@@ -1,6 +1,5 @@
 import ContentContainer from "./Layout/ContentContainer";
 import ArticleHeader from "./ArticleHeader";
-import ContentContainer from "./ContentContainer";
 import Logo from "../assets/logo.svg";
 
 const data = {
