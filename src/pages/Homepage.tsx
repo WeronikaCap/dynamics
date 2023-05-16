@@ -16,7 +16,6 @@ import {
 const Homepage =()=>{
     return (
         <>
-        <Navigation/>
         <Header placeHolderText="Search" title="Customer Self-Service" description="Type in your search phrase or question and use our extensive database of answers" 
           backgroundImage="/src/assets/Hero-BG.png"/>
           <AuthenticatedTemplate>
@@ -29,7 +28,6 @@ const Homepage =()=>{
             <SignInButton />
           </UnauthenticatedTemplate>
           <ArticleSection />
-          <Footer />
         </>
     )
 }

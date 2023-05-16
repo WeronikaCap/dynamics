@@ -29,7 +29,7 @@ const Header =(props: HeaderProps) => {
                 {description && <p className="pb-12 text-center">{description}</p>}
                 <Paper component="form" sx={{display: 'flex', alignItems: 'center', width: 400 }}>
                     <InputBase sx={{ ml: 1, flex: 1 }} placeholder={placeHolderText} inputProps={{ 'aria-label': placeHolderText }} />
-                    <IconButton type="button" sx={[{ p: '10px', bgcolor:"#437EF7", borderRadius: 1 }, {'&:hover': {backgroundColor: 'red',}},]} aria-label="search" >
+                    <IconButton type="button" sx={[{ p: '10px', bgcolor:"#437EF7", borderRadius: 1 }, {'&:hover': {backgroundColor: 'blue',}},]} aria-label="search" >
                         <FontAwesomeIcon size="xs" icon={faMagnifyingGlass} color="white"/>
                     </IconButton>
                 </Paper>
