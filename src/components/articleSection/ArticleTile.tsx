@@ -1,4 +1,4 @@
-import ArrowIcon from "../../assets/arrowIcon.svg";
+import ArrowIcon from "assets/arrowIcon.svg";
 import { Rating } from "@mui/material";
 
 interface Props {

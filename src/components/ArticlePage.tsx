@@ -1,6 +1,6 @@
 import ContentContainer from "./Layout/ContentContainer";
 import ArticleHeader from "./ArticleHeader";
-import Logo from "../assets/logo.svg";
+import Logo from "assets/logo.svg";
 import "./ArticlePage.css";
 import ArticleContent from "./ArticleContent";
 

@@ -1,5 +1,5 @@
 import { useMsal } from "@azure/msal-react";
-import { loginRequest } from "../auth/authConfig";
+import { loginRequest } from "auth/authConfig";
 
 export const SignInButton = () => {
     const { instance } = useMsal();

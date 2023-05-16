@@ -1,5 +1,4 @@
 import Rating from "@mui/material/Rating";
-import Logo from "../assets/logo.svg";
 import ArticleTag from "./ArticleTag";
 
 interface Article {

@@ -4,7 +4,7 @@ import {
   faTwitter,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
-import Logo from "../../assets/logo.svg";
+import Logo from "assets/logo.svg";
 import ContentContainer from "./ContentContainer";
 
 const Footer = () => (
