@@ -1,4 +1,4 @@
-import ContentContainer from "../ContentContainer";
+import ContentContainer from "components/Layout/ContentContainer";
 import KnowledgeBaseItem from "./KnowledgeBaseSection";
 
 const DATA = [

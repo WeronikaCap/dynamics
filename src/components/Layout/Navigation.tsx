@@ -18,7 +18,7 @@ const Navigation = () => {
               </Link>
             </li>
             <li>
-              <Link className="hover:text-base-black" to="/">
+              <Link className="hover:text-base-black" to="/knowledge-base">
                 Knowledge Base
               </Link>
             </li>
