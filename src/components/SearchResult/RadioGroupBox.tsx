@@ -7,6 +7,7 @@ import FormLabel from "@mui/material/FormLabel";
 interface GroupItems {
   value: string;
   lable: string;
+  count: number;
 }
 
 interface Props {
@@ -17,9 +18,15 @@ interface Props {
 const RadioGroupBox = (props: Props) => {
   const { title, radioItems } = props;
 
+  const formControlLabelStyle = {
+    "& .MuiFormControlLabel-label": {
+      width: "100%",
+    },
+  };
+
   return (
     <>
-      <FormControl>
+      <FormControl className="w-full">
         <FormLabel
           id="demo-radio-buttons-group-label"
           className="text-base-black text-xl font-semibold	"
@@ -34,9 +41,15 @@ const RadioGroupBox = (props: Props) => {
           {radioItems.map((item, index) => (
             <FormControlLabel
               key={index}
+              sx={{ ...formControlLabelStyle }}
               value={item.value}
               control={<Radio />}
-              label={item.lable}
+              label={
+                <div className="flex justify-between">
+                  <p>{item.lable}</p>
+                  <p>{item.count}</p>
+                </div>
+              }
             />
           ))}
         </RadioGroup>

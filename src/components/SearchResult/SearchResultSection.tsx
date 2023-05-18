@@ -26,9 +26,9 @@ const SearchResultSection = () => {
               <RadioGroupBox
                 title="Date Modified"
                 radioItems={[
-                  { value: "All", lable: "All" },
-                  { value: "Today", lable: "Today" },
-                  { value: "Past Week", lable: "Past Week" },
+                  { value: "All", lable: "All", count: 3 },
+                  { value: "Today", lable: "Today", count: 6 },
+                  { value: "Past Week", lable: "Past Week", count: 7 },
                 ]}
               />
             </BoxWrapper>
