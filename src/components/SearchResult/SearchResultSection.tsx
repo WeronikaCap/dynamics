@@ -11,11 +11,12 @@ const SearchResultSection = () => {
     <section className="bg-neutral-gray pt-16 pb-16">
       <ContentContainer>
         <div className="grid grid-cols-[minmax(90px,408px)_1fr] gap-24">
-          <div>
+          <div className="flex flex-col gap-6">
             <BoxWrapper>
               <CheckboxGroupBox
                 title="Type"
                 radioItems={[
+                  { value: "All", lable: "All", count: 3 },
                   { value: "Today", lable: "Today", count: 1 },
                   { value: "Past Week", lable: "Past Week", count: 2 },
                 ]}
@@ -25,6 +26,7 @@ const SearchResultSection = () => {
               <RadioGroupBox
                 title="Date Modified"
                 radioItems={[
+                  { value: "All", lable: "All" },
                   { value: "Today", lable: "Today" },
                   { value: "Past Week", lable: "Past Week" },
                 ]}

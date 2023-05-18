@@ -30,10 +30,12 @@ const CheckboxGroupBox = (props: Props) => {
       <FormLabel className="text-base-black text-xl font-semibold	">
         {title}
       </FormLabel>
-
-      {radioItems.map((item) => (
+      {radioItems.map((item, index) => (
         <FormControlLabel
-          control={<Checkbox value={item.value} />}
+          key={index}
+          control={
+            <Checkbox value={item.value} defaultChecked={index === 0 && true} />
+          }
           sx={{ ...formControlLabelStyle }}
           label={
             <div className="flex justify-between">
