@@ -1,8 +1,8 @@
-import ArrowIcon from "../../assets/arrowIcon.svg";
+import ArrowIcon from "../../../assets/arrowIcon.svg";
 import { Rating } from "@mui/material";
 
 interface Props {
-  publicationDate: string;
+  createdon: string;
   rating: number;
   ratingCount: number;
   title: string;
@@ -14,7 +14,7 @@ interface Props {
 
 const ArticleTile = ({
   type,
-  publicationDate,
+  createdon,
   rating,
   ratingCount,
   title,
@@ -22,6 +22,12 @@ const ArticleTile = ({
   image,
   wideVariant,
 }: Props) => {
+  const formattedDate = new Date(createdon).toLocaleDateString("en-us", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <div
       className={
@@ -45,7 +51,7 @@ const ArticleTile = ({
             <div className="flex align-center justify-center bg-light-blue w-16 h-7 rounded-l">
               <p className="text-primary-blue">{type}</p>
             </div>
-            <p className="px-4">{publicationDate}</p>
+            <p className="px-4">{formattedDate}</p>
           </div>
           <div className={"flex flex-row items-center"}>
             <Rating name="read-only" value={rating} readOnly />

@@ -2,8 +2,8 @@ import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ArrowLeft from "../../assets/arrowLeft.svg";
-import ArrowRight from "../../assets/arrowRight.svg";
+import ArrowLeft from "../../../assets/arrowLeft.svg";
+import ArrowRight from "../../../assets/arrowRight.svg";
 
 interface Props {
   children?: React.ReactNode;
@@ -54,7 +54,7 @@ const ArticleSlider = ({ children }: Props) => {
     autoplay: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1400,
         settings: {
           slidesToShow: 2,
         },
