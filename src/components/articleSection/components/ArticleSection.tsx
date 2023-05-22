@@ -10,7 +10,7 @@ import { useIsAuthenticated, useMsal } from "@azure/msal-react";
 
 const ArticleSection = () => {
   const { getAll } = useArticleService();
-  const [articles, setArticles] = useState<any>();
+  const [articles, setArticles] = useState<Article[]>();
   const isAuthenticated = useIsAuthenticated();
   const { instance, accounts } = useMsal();
 
@@ -21,26 +21,11 @@ const ArticleSection = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      instance.acquireTokenSilent(tokenRequest).then((response) => {
-        console.log("reponse token", response.accessToken);
-        let myHeaders = new Headers();
-        myHeaders.append("Authorization", `Bearer ${response.accessToken}`);
-        getAll(myHeaders).then((articles: any) => {
-          setArticles(articles.value);
-          console.log("Fetched articles : ", articles.value);
-        });
+      getAll().then((articles: any) => {
+        setArticles(articles.value);
       });
     }
   }, [isAuthenticated]);
-
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //       getAll().then((articles: any) => {
-  //         setArticles(articles.value);
-  //         console.log("Fetched articles : ", articles.value);
-  //       });
-  //   }
-  // }, [isAuthenticated]);
 
   const mostViewedArticles =
     articles &&
@@ -92,7 +77,7 @@ const ArticleSection = () => {
               );
             })
           ) : (
-            <div>please wait...</div>
+            <h1 className="m-4 ">Log in to see articles</h1>
           )}
         </ArticleSlider>
       </div>

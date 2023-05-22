@@ -7,8 +7,7 @@ export const getURI = (endpoint: string) =>
   `https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/${endpoint}`;
 
 export interface ArticleService {
-  // getAll: () => Promise<void | Article[]>;
-  getAll: (myHeaders: any) => Promise<Article[]>;
+  getAll:  () => Promise<Article[]>;
 }
 
 export const ArticleContext = createContext<ArticleService>(
@@ -16,61 +15,34 @@ export const ArticleContext = createContext<ArticleService>(
 );
 
 export const useArticles = () => {
-  // @ts-ignore
   const { instance, accounts } = useMsal();
   const tokenRequest = {
     account: accounts[0],
     scopes: ["https://capgeminidcxnl.crm4.dynamics.com/user_impersonation"],
   };
 
-  const getAll: ArticleService["getAll"] = (myHeaders: any) => {
+  const getAll: ArticleService["getAll"] = async () => {
+    let myHeaders = new Headers();
+    await instance.acquireTokenSilent(tokenRequest).then((response) => {
+      myHeaders.append("Authorization", `Bearer ${response.accessToken}`);
+    });
     return fetch(getURI("knowledgearticles"), {
-          method: "GET",
-          headers: myHeaders,
-          redirect: "follow",
-        })
-          .then((response) => response.json())
-          .then((articles) => {
-            console.log(articles);
-            return articles;
-          })
-          .catch((e) => {
-            console.log(e);
-          });
-      
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    })
+      .then((response) => response.json())
+      .then((articles) => {
+        return articles;
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
   return {
     getAll,
   };
 };
-
-//   const getAll: ArticleService["getAll"] = () => {
-//     return instance
-//       .acquireTokenSilent(tokenRequest)
-//       .then((response) => {
-//         let myHeaders = new Headers();
-//         myHeaders.append("Authorization", `Bearer ${response.accessToken}`);
-//         fetch(getURI("knowledgearticles"), {
-//           method: "GET",
-//           headers: myHeaders,
-//           redirect: "follow",
-//         })
-//           .then((response) => response.json())
-//           .then((articles) => {
-//             console.log(articles);
-//             return articles;
-//           })
-//           .catch((e) => {
-//             console.log(e);
-//           });
-//       })
-//   };
-//   return {
-//     getAll,
-//   };
-// };
-
-
 
 export const ArticleProvider: FC<any> = ({ children }) => {
   return (
