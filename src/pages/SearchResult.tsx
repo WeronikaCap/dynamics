@@ -7,7 +7,7 @@ const SearchResult = () => {
       <Header
         placeHolderText="Search the knowledge base..."
         title="2 Search Results for “Adidas”"
-        backgroundImage="/src/assets/HeroBg-searchPage.png"
+        backgroundImage="/src/assets/HeroBg-searchPage.jpg"
         variantSmall={true}
       />
       <SearchResultSection />
