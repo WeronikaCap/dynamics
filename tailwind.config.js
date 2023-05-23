@@ -10,11 +10,13 @@ export default {
         "main-dark": "#1c2534",
         "light-gray": "#DAE0E6",
         "main-gray": "#A5ACBA",
+        "border-grey": "#EAEBF0",
         "primary": "#E8EFFD",
         "primary-blue": "#437EF7",
         "light-blue": "#F5FAFF",
         "neutral-gray": "#FAFBFC",
-        "blue": "#1976d2"
+        "blue": "#1976d2",
+        "blue-link": "#437EF7"
       },
       maxWidth: {
         "screen-3xl": "1920px",
