@@ -12,4 +12,10 @@ export interface KnowledgeArticle {
 export interface KnowledgeArticleResponse {
   "@odata.context": string;
   value: KnowledgeArticle[];
+  error: ErrorType;
+}
+
+export interface ErrorType {
+  message: string;
+  code: number;
 }

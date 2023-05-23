@@ -20,42 +20,38 @@ const ArticleSection = () => {
     }
   }, [isAuthenticated]);
 
-  const mostViewedArticles =
-    articles &&
-    articles.value.sort((a: any, b: any) => {
-      if (a.knowledgearticleviews > b.knowledgearticleviews) {
-        return -1;
-      } else {
-        return 1;
-      }
-    });
-
   return (
     <ContentContainer className="flex flex-col items-center w-full bg-neutral-gray">
-      <ArticleHeader />
-      <div className="screen-3xl w-full mt-8">
-        <ArticleSlider>
-          {mostViewedArticles ? (
-            mostViewedArticles.slice(0, 6).map((article: any, id: number) => {
-              return (
-                <ArticleTile
-                  key={id}
-                  type={article.__typename}
-                  title={article.title}
-                  image={article.image ? "" : "https://picsum.photos/450/200"}
-                  rating={article.rating}
-                  ratingCount={article.rating_count}
-                  description={article.description}
-                  createdon={article.createdon}
-                />
-              );
-            })
-          ) : (
-            <h1 className="m-4 ">Log in to see articles</h1>
-          )}
-        </ArticleSlider>
-      </div>
-      {mostViewedArticles && (
+      {!isAuthenticated ? (
+        <div>log in to see articles</div>
+      ) : articles?.error ? (
+        <div className="m-4 ">
+          There has been an error loading the articles. Please try again
+        </div>
+      ) : (
+        <>
+          <ArticleHeader />
+          <div className="screen-3xl w-full mt-8">
+            <ArticleSlider>
+              {articles?.value.slice(0, 6).map((article: any, id: number) => {
+                return (
+                  <ArticleTile
+                    key={id}
+                    type={article.__typename}
+                    title={article.title}
+                    image={article.image ? "" : "https://picsum.photos/450/200"}
+                    rating={article.rating}
+                    ratingCount={article.rating_count}
+                    description={article.description}
+                    createdon={article.createdon}
+                  />
+                );
+              })}
+            </ArticleSlider>
+          </div>
+        </>
+      )}
+      {articles && (
         <button className="my-11 bg-primary-blue text-white">
           Read More Articles
         </button>

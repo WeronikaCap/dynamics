@@ -1,12 +1,12 @@
 import { createContext, useContext, FC } from "react";
 import { KnowledgeArticleResponse } from "../knowledgeArticle";
-import { useMsal} from "@azure/msal-react";
+import { useMsal } from "@azure/msal-react";
 
 export const getURI = (endpoint: string) =>
   `https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/${endpoint}`;
 
 export interface ArticleService {
-  getAll:  () => Promise<KnowledgeArticleResponse>;
+  getAll: () => Promise<KnowledgeArticleResponse>;
 }
 
 export const ArticleContext = createContext<ArticleService>(
@@ -35,7 +35,7 @@ export const useArticles = () => {
         return articles;
       })
       .catch((e) => {
-        console.log(e);
+        throw e;
       });
   };
   return {

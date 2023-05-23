@@ -5,9 +5,7 @@ import {
 import { SignInButton } from "components/SignInButton";
 import { SignOutButton } from "components/SignOutButton";
 
-import Navigation from "components/Layout/Navigation";
 import PageLayout from "components/PageLayout";
-import Footer from "components/Layout/Footer";
 import Header from "components/Layout/Header";
 import ArticleSection from "components/articleSection/components/ArticleSection";
 
