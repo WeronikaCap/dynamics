@@ -2,14 +2,15 @@ import ArrowIcon from "assets/arrowIcon.svg";
 import { Rating } from "@mui/material";
 
 interface Props {
-  publicationDate: string;
-  rating: number;
-  ratingCount: number;
+  publicationDate?: string;
+  rating?: number;
+  ratingCount?: number;
   title: string;
   description: string;
   image: string;
-  type: string;
+  type?: string;
   wideVariant?: boolean;
+  sidebar?: boolean;
 }
 
 const ArticleTile = ({
@@ -21,13 +22,16 @@ const ArticleTile = ({
   description,
   image,
   wideVariant,
+  sidebar,
 }: Props) => {
   return (
     <div
       className={
         wideVariant
           ? "flex flex-row relative border-solid border border-light-gray rounded-xl bg-white max-w-[1216px] h-[241px]"
-          : "relative border-solid border border-light-gray rounded-xl mx-4 bg-white"
+          : `relative border-solid border border-light-gray rounded-xl mx-4 bg-white ${
+              sidebar && "my-6"
+            }`
       }
     >
       <img
@@ -40,16 +44,22 @@ const ArticleTile = ({
         }
       ></img>
       <div className={wideVariant ? "flex flex-col justify-between" : ""}>
-        <div className="flex flex-row justify-between px-8 gap-8 pt-6 pb-5">
+        <div
+          className={`flex flex-row justify-between px-8 gap-8 pb-5 ${
+            !sidebar && "pt-6"
+          }`}
+        >
           <div className="flex flex-row">
-            <div className="flex align-center justify-center bg-light-blue w-16 h-7 rounded-l">
-              <p className="text-primary-blue">{type}</p>
-            </div>
-            <p className="px-4">{publicationDate}</p>
+            {type && (
+              <div className="flex align-center justify-center bg-light-blue w-16 h-7 rounded-l">
+                <p className="text-primary-blue">{type}</p>
+              </div>
+            )}
+            {publicationDate && <p className="px-4">{publicationDate}</p>}
           </div>
           <div className={"flex flex-row items-center"}>
-            <Rating name="read-only" value={rating} readOnly />
-            <p className="flex ">({ratingCount})</p>
+            {rating && <Rating name="read-only" value={rating} readOnly />}
+            {ratingCount && <p className="flex ">({ratingCount})</p>}
           </div>
         </div>
         <div className="flex flex-col px-8">
