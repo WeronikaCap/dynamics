@@ -9,7 +9,7 @@ interface HeaderProps {
     title: string;
     description?: string;
     backgroundImage: string;
-    paddingSmall?: false;
+    variantSmall?: boolean;
     placeHolderText: string;    
 }
 
@@ -20,12 +20,12 @@ declare module "react" {
   }
 
 const Header =(props: HeaderProps) => {
-    const {title, description, backgroundImage, paddingSmall, placeHolderText} = props;
+    const {title, description, backgroundImage, variantSmall = false, placeHolderText} = props;
 
     return (
-        <header style={{'--image-url': `url(${backgroundImage})`}} className={`bg-[image:var(--image-url)] bg-cover bg-no-repeat ${paddingSmall ? "pt-12 pb-12" : "pt-32 pb-32"}`}>
+        <header style={{'--image-url': `url(${backgroundImage})`}} className={`bg-[image:var(--image-url)] bg-cover bg-no-repeat ${variantSmall ? "pt-12 pb-12" : "pt-32 pb-32"}`}>
             <div className={`w-[760px] m-auto flex flex-col items-center`}>
-                <h1 className="pb-4">{title}</h1>
+                <h1 className={`pb-4 ${variantSmall && "text-white text-xl"}`}>{title}</h1>
                 {description && <p className="pb-12 text-center">{description}</p>}
                 <Paper component="form" sx={{display: 'flex', alignItems: 'center', width: 400 }}>
                     <InputBase sx={{ ml: 1, flex: 1 }} placeholder={placeHolderText} inputProps={{ 'aria-label': placeHolderText }} />
