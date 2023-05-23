@@ -16,7 +16,6 @@ const ArticleSection = () => {
     if (isAuthenticated) {
       getAll().then((articles: KnowledgeArticleResponse) => {
         setArticles(articles);
-        console.log(articles)
       });
     }
   }, [isAuthenticated]);
