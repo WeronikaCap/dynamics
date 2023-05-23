@@ -17,7 +17,7 @@ interface Props {
 }
 
 const CheckboxGroupBox = (props: Props) => {
-  const { title, radioItems, isRaiting = false } = props;
+  const { title, radioItems, isRaiting } = props;
 
   const formControlLabelStyle = {
     "& .MuiFormControlLabel-label": {
