@@ -19,7 +19,7 @@ const ArticlesList = () => {
         let myHeaders = new Headers();
         myHeaders.append("Authorization", `Bearer ${response.accessToken}`);
         fetch(
-          "https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/knowledgearticles",
+          "https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/knowledgearticles?$orderby=knowledgearticleviews%20desc",
           {
             method: "GET",
             headers: myHeaders,

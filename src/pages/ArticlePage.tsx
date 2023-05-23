@@ -26,7 +26,7 @@ const ArticlePage = () => {
         let myHeaders = new Headers();
         myHeaders.append("Authorization", `Bearer ${response.accessToken}`);
         fetch(
-          "https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/knowledgearticles",
+          "https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/knowledgearticles?$orderby=knowledgearticleviews%20desc",
           {
             method: "GET",
             headers: myHeaders,
@@ -68,7 +68,7 @@ const ArticlePage = () => {
       </div>
       <div className="flex mt-20 pl-28">
         <ArticleContent article={data[articleId].content} />
-        <ArticleSidebar />
+        <ArticleSidebar data={data} currentId={articleId} />
       </div>
     </ContentContainer>
   );
