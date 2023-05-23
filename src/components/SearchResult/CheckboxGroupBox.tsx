@@ -45,7 +45,7 @@ const CheckboxGroupBox = (props: Props) => {
                 <div className="flex">
                   <Rating
                     name="half-rating-read"
-                    defaultValue={item.value}
+                    value={item.value as number}
                     precision={0.5}
                     readOnly
                   />
