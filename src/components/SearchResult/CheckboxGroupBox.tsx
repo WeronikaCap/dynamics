@@ -6,7 +6,7 @@ import Rating from "@mui/material/Rating";
 
 interface CheckBoxItems {
   value: string | number;
-  lable: string;
+  lable?: string;
   count: number;
 }
 

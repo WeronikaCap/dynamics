@@ -2,7 +2,7 @@ import ArticleTile from "components/articleSection/ArticleTile";
 import ContentContainer from "components/Layout/ContentContainer";
 import BoxWrapper from "components/SearchResult/BoxWrapper";
 import RadioGroupBox from "components/SearchResult/RadioGroupBox";
-import CheckboxGroupBox from "./CheckboxGroupBox";
+import CheckboxGroupBox from "components/SearchResult/CheckboxGroupBox";
 
 import data from "components/articleSection/mock.json";
 
@@ -37,9 +37,9 @@ const SearchResultSection = () => {
                 isRaiting={true}
                 title="Raiting"
                 radioItems={[
-                  { value: 5, lable: "", count: 6 },
-                  { value: 4.2, lable: "", count: 9 },
-                  { value: 3, lable: "", count: 64 },
+                  { value: 5, count: 6 },
+                  { value: 4.2, count: 9 },
+                  { value: 3, count: 64 },
                 ]}
               />
             </BoxWrapper>
