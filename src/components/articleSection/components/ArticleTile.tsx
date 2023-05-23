@@ -60,7 +60,7 @@ const ArticleTile = ({
         </div>
         <div className="flex flex-col px-8">
           <div className="text-2xl font-semibold text-black mb-4">{title}</div>
-          <p className="text-base">{description}</p>
+          <p className="text-base h-[48px]">{description}</p>
           <div
             className="flex flex-row gap-2.5 items-center
          py-6 text-primary-blue font-semibold"

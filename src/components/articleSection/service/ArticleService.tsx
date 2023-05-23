@@ -1,13 +1,12 @@
-import React, { createContext, useContext, FC } from "react";
-import { Article } from "../article";
-import { useMsal, useIsAuthenticated } from "@azure/msal-react";
-import { useState } from "react";
+import { createContext, useContext, FC } from "react";
+import { KnowledgeArticleResponse } from "../knowledgeArticle";
+import { useMsal} from "@azure/msal-react";
 
 export const getURI = (endpoint: string) =>
   `https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/${endpoint}`;
 
 export interface ArticleService {
-  getAll:  () => Promise<Article[]>;
+  getAll:  () => Promise<KnowledgeArticleResponse>;
 }
 
 export const ArticleContext = createContext<ArticleService>(
