@@ -1,4 +1,4 @@
-import ArticleTile from "components/articleSection/ArticleTile";
+import ArticleTile from "components/articleSection/components/ArticleTile";
 import ContentContainer from "components/Layout/ContentContainer";
 import BoxWrapper from "components/SearchResult/BoxWrapper";
 import RadioGroupBox from "components/SearchResult/RadioGroupBox";
