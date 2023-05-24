@@ -68,7 +68,7 @@ const ArticlePage = () => {
       </div>
       <div className="flex mt-20 pl-28">
         <ArticleContent article={data[articleId].content} />
-        <ArticleSidebar data={data} currentId={articleId} />
+        <ArticleSidebar data={data} />
       </div>
     </ContentContainer>
   );
