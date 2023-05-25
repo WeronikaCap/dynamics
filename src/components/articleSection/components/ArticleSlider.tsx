@@ -60,7 +60,7 @@ const ArticleSlider = ({ children }: Props) => {
         },
       },
       {
-        breakpoint: 968,
+        breakpoint: 1007,
         settings: {
           slidesToShow: 1,
         },
