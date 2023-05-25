@@ -1,4 +1,5 @@
 import { useMsal } from "@azure/msal-react";
+import Button from "@mui/material/Button";
 import { loginRequest } from "auth/authConfig";
 
 export const SignInButton = () => {
@@ -12,6 +13,8 @@ export const SignInButton = () => {
         }
     }
     return (
-        <button onClick={() => handleLogin("redirect")}>Sign in using Redirect</button>
+      <Button variant="contained" onClick={() => handleLogin("redirect")}>
+        Sign In
+      </Button>
     );
 }
