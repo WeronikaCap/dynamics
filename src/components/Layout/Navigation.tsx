@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
-import ContentContainer from "components/Layout/ContentContainer";
+import {
+  AuthenticatedTemplate,
+  UnauthenticatedTemplate,
+} from "@azure/msal-react";
 import Logo from "assets/Logo.png";
+import ContentContainer from "components/Layout/ContentContainer";
+import LoggedUser from "components/LoggedUser";
+import { SignInButton } from "components/SignInButton";
+import { SignOutButton } from "components/SignOutButton";
 
 const Navigation = () => {
   return (
@@ -34,10 +40,16 @@ const Navigation = () => {
             </li>
           </ul>
           <div className="flex flex-col items-center lg:flex-row gap-6">
-            <Link to="/" className="text-blue">
-              Register
-            </Link>
-            <Button variant="contained">Log in</Button>
+            <AuthenticatedTemplate>
+              <LoggedUser />
+              <SignOutButton />
+            </AuthenticatedTemplate>
+            <UnauthenticatedTemplate>
+              <Link to="/" className="text-blue">
+                Register
+              </Link>
+              <SignInButton />
+            </UnauthenticatedTemplate>
           </div>
         </div>
       </ContentContainer>
