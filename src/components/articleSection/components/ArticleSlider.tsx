@@ -51,7 +51,8 @@ const ArticleSlider = ({ children }: Props) => {
     prevArrow: <PrevArrow />,
     speed: 1000,
     autoplaySpeed: 3000,
-    autoplay: true,
+    autoplay: false,
+    initialSlide: 0,
     responsive: [
       {
         breakpoint: 1400,
