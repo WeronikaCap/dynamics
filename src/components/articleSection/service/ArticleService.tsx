@@ -6,7 +6,7 @@ export const getURI = (endpoint: string) =>
   `https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/${endpoint}`;
 
 export interface ArticleService {
-  getAll: () => Promise<KnowledgeArticleResponse>;
+  getAll: (endpoint: string) => Promise<KnowledgeArticleResponse>;
 }
 
 export const ArticleContext = createContext<ArticleService>(
@@ -20,12 +20,12 @@ export const useArticles = () => {
     scopes: ["https://capgeminidcxnl.crm4.dynamics.com/user_impersonation"],
   };
 
-  const getAll: ArticleService["getAll"] = async () => {
+  const getAll: ArticleService["getAll"] = async (endpoint: string) => {
     let myHeaders = new Headers();
     await instance.acquireTokenSilent(tokenRequest).then((response) => {
       myHeaders.append("Authorization", `Bearer ${response.accessToken}`);
     });
-    return fetch(getURI("knowledgearticles"), {
+    return fetch(getURI(`knowledgearticles${endpoint}`), {
       method: "GET",
       headers: myHeaders,
       redirect: "follow",
