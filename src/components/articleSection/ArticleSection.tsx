@@ -2,8 +2,8 @@ import ArticleSlider from "./ArticleSlider";
 import ArticleTile from "./ArticleTile";
 import ArticleHeader from "./ArticleHeader";
 import ContentContainer from "components/Layout/ContentContainer";
-import { useArticleService } from "../service/ArticleService";
-import { KnowledgeArticleResponse } from "../knowledgeArticle";
+import { useArticleService } from "../../service/ArticleService";
+import { KnowledgeArticleResponse } from "./knowledgeArticle";
 import { useState, useEffect } from "react";
 import { useIsAuthenticated } from "@azure/msal-react";
 

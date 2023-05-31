@@ -1,4 +1,4 @@
-import ArticleTile from "components/articleSection/components/ArticleTile";
+import ArticleTile from "components/articleSection/ArticleTile";
 
 interface SidebarData {
   title: string;

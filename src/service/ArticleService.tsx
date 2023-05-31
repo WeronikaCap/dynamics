@@ -1,5 +1,5 @@
 import { createContext, useContext, FC } from "react";
-import { KnowledgeArticleResponse } from "../knowledgeArticle";
+import { KnowledgeArticleResponse } from "../components/articleSection/knowledgeArticle";
 import { useMsal } from "@azure/msal-react";
 
 export const getURI = (endpoint: string) =>
