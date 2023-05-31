@@ -1,20 +1,29 @@
 import { Routes, Route } from "react-router-dom";
 
+import Navigation from "components/Layout/Navigation";
+import Footer from "components/Layout/Footer";
 import Homepage from "pages/Homepage";
+import { ArticleProvider } from "components/articleSection/service/ArticleService";
+import KnowledgeBase from "pages/KnowledgeBase";
+import SearchResult from "pages/SearchResult";
 import ArticlePage from "pages/ArticlePage";
-import PageWrapper from "components/Layout/PageWrapper";
 import ArticlesList from "components/singleArticle/ArticlesList";
 
-// Remember that MsalProvider must be rendered somewhere higher up in the component tree
 function App() {
   return (
-    <PageWrapper>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/articles" element={<ArticlesList />} />
+    <>
+      <ArticleProvider>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/knowledge-base" element={<KnowledgeBase />} />
+          <Route path="/search" element={<SearchResult />} />
+          <Route path="/articles" element={<ArticlesList />} />
         <Route path="/articles/:slug" element={<ArticlePage />} />
       </Routes>
-    </PageWrapper>
+        <Footer />
+      </ArticleProvider>
+    </>
   );
 }
 

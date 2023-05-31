@@ -2,9 +2,15 @@ import ArrowIcon from "assets/arrowIcon.svg";
 import { Rating } from "@mui/material";
 
 interface Props {
+<<<<<<< HEAD:src/components/articleSection/ArticleTile.tsx
   publicationDate?: string;
   rating?: number;
   ratingCount?: number;
+=======
+  createdon: string;
+  rating: number;
+  ratingCount: number;
+>>>>>>> 2ed89b349b65447afbb5671d48f0e88c19ea539f:src/components/articleSection/components/ArticleTile.tsx
   title: string;
   description: string;
   image: string;
@@ -15,7 +21,7 @@ interface Props {
 
 const ArticleTile = ({
   type,
-  publicationDate,
+  createdon,
   rating,
   ratingCount,
   title,
@@ -24,6 +30,12 @@ const ArticleTile = ({
   wideVariant,
   sidebar,
 }: Props) => {
+  const formattedDate = new Date(createdon).toLocaleDateString("en-us", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <div
       className={
@@ -50,12 +62,19 @@ const ArticleTile = ({
           }`}
         >
           <div className="flex flex-row">
+<<<<<<< HEAD:src/components/articleSection/ArticleTile.tsx
             {type && (
               <div className="flex align-center justify-center bg-light-blue w-16 h-7 rounded-l">
                 <p className="text-primary-blue">{type}</p>
               </div>
             )}
             {publicationDate && <p className="px-4">{publicationDate}</p>}
+=======
+            <div className="flex align-center justify-center bg-light-blue w-16 h-7 rounded-l">
+              <p className="text-primary-blue">{type}</p>
+            </div>
+            <p className="px-4">{formattedDate}</p>
+>>>>>>> 2ed89b349b65447afbb5671d48f0e88c19ea539f:src/components/articleSection/components/ArticleTile.tsx
           </div>
           <div className={"flex flex-row items-center"}>
             {rating && <Rating name="read-only" value={rating} readOnly />}
@@ -64,7 +83,7 @@ const ArticleTile = ({
         </div>
         <div className="flex flex-col px-8">
           <div className="text-2xl font-semibold text-black mb-4">{title}</div>
-          <p className="text-base">{description}</p>
+          <p className="text-base h-[48px]">{description}</p>
           <div
             className="flex flex-row gap-2.5 items-center
          py-6 text-primary-blue font-semibold"

@@ -54,7 +54,7 @@ const ArticleSlider = ({ children }: Props) => {
     autoplay: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1400,
         settings: {
           slidesToShow: 2,
         },
