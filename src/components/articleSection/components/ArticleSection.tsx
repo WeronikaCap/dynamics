@@ -45,13 +45,13 @@ const ArticleSection = () => {
               <>
                 <ArticleSlider>
                   {articles?.value
-                    .slice(0, 7)
+                    .slice(0, 6)
                     .map((article: any, index: number) => {
                       return (
                         <ArticleTile
                           data-index={index}
                           key={index}
-                          type={article.__typename}
+                          type={article.__typename} 
                           title={article.title}
                           image={
                             article.image ? "" : "https://picsum.photos/450/200"
