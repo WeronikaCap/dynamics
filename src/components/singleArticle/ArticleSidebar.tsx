@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ArticleTile from "components/articleSection/ArticleTile";
+import ArticleTile from "components/articleSection/components/ArticleTile";
 
 interface SidebarData {
   title: string;

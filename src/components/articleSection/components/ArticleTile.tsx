@@ -2,15 +2,9 @@ import ArrowIcon from "assets/arrowIcon.svg";
 import { Rating } from "@mui/material";
 
 interface Props {
-<<<<<<< HEAD:src/components/articleSection/ArticleTile.tsx
-  publicationDate?: string;
   rating?: number;
   ratingCount?: number;
-=======
-  createdon: string;
-  rating: number;
-  ratingCount: number;
->>>>>>> 2ed89b349b65447afbb5671d48f0e88c19ea539f:src/components/articleSection/components/ArticleTile.tsx
+  createdon?: string;
   title: string;
   description: string;
   image: string;
@@ -30,11 +24,13 @@ const ArticleTile = ({
   wideVariant,
   sidebar,
 }: Props) => {
-  const formattedDate = new Date(createdon).toLocaleDateString("en-us", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const formattedDate = createdon
+    ? new Date(createdon).toLocaleDateString("en-us", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : null;
 
   return (
     <div
@@ -62,19 +58,12 @@ const ArticleTile = ({
           }`}
         >
           <div className="flex flex-row">
-<<<<<<< HEAD:src/components/articleSection/ArticleTile.tsx
             {type && (
               <div className="flex align-center justify-center bg-light-blue w-16 h-7 rounded-l">
                 <p className="text-primary-blue">{type}</p>
               </div>
             )}
-            {publicationDate && <p className="px-4">{publicationDate}</p>}
-=======
-            <div className="flex align-center justify-center bg-light-blue w-16 h-7 rounded-l">
-              <p className="text-primary-blue">{type}</p>
-            </div>
-            <p className="px-4">{formattedDate}</p>
->>>>>>> 2ed89b349b65447afbb5671d48f0e88c19ea539f:src/components/articleSection/components/ArticleTile.tsx
+            {createdon && <p className="px-4">{formattedDate}</p>}
           </div>
           <div className={"flex flex-row items-center"}>
             {rating && <Rating name="read-only" value={rating} readOnly />}
