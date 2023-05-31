@@ -11,6 +11,7 @@ interface Props {
   type?: string;
   wideVariant?: boolean;
   sidebar?: boolean;
+  id: number;
 }
 
 const ArticleTile = ({
@@ -23,6 +24,7 @@ const ArticleTile = ({
   image,
   wideVariant,
   sidebar,
+  id,
 }: Props) => {
   const formattedDate = createdon
     ? new Date(createdon).toLocaleDateString("en-us", {
@@ -79,12 +81,15 @@ const ArticleTile = ({
           <p className="text-base h-[48px] text-ellipsis overflow-hidden">
             {description}
           </p>
-          <div
-            className="flex flex-row gap-2.5 items-center
+          <div>
+            <a
+              className="flex flex-row gap-2.5 items-center
          py-6 text-primary-blue font-semibold"
-          >
-            <p>Read More</p>
-            <img src={ArrowIcon} />
+              href={`/articles/${id}`}
+            >
+              <p>Read More</p>
+              <img src={ArrowIcon} />
+            </a>
           </div>
         </div>
       </div>

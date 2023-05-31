@@ -37,6 +37,7 @@ const ArticleSection = () => {
                 return (
                   <ArticleTile
                     key={id}
+                    id={id}
                     type={article.__typename}
                     title={article.title}
                     image={article.image ? "" : "https://picsum.photos/450/200"}
