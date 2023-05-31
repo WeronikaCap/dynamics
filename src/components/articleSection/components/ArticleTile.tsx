@@ -66,8 +66,12 @@ const ArticleTile = ({
             {createdon && <p className="px-4">{formattedDate}</p>}
           </div>
           <div className={"flex flex-row items-center"}>
-            {rating && <Rating name="read-only" value={rating} readOnly />}
-            {ratingCount && <p className="flex ">({ratingCount})</p>}
+            {rating != undefined && (
+              <Rating name="read-only" value={rating} readOnly />
+            )}
+            {ratingCount != undefined && (
+              <p className="flex ">({ratingCount})</p>
+            )}
           </div>
         </div>
         <div className="flex flex-col px-8">

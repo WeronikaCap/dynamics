@@ -20,6 +20,8 @@ const ArticleSection = () => {
     }
   }, [isAuthenticated]);
 
+  console.log(articles.value)
+
   return (
     <ContentContainer className="flex flex-col items-center w-full bg-neutral-gray">
       {!isAuthenticated ? (
