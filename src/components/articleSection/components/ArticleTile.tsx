@@ -59,11 +59,11 @@ const ArticleTile = ({
         >
           <div className="flex flex-row">
             {type && (
-              <div className="flex align-center justify-center bg-light-blue w-16 h-7 rounded-l">
+              <div className="flex align-center justify-center bg-light-blue w-16 h-7 rounded-l mr-4">
                 <p className="text-primary-blue">{type}</p>
               </div>
             )}
-            {createdon && <p className="px-4">{formattedDate}</p>}
+            {createdon && <p className="pr-4">{formattedDate}</p>}
           </div>
           <div className={"flex flex-row items-center"}>
             {rating != undefined && (
@@ -76,7 +76,9 @@ const ArticleTile = ({
         </div>
         <div className="flex flex-col px-8">
           <div className="text-2xl font-semibold text-black mb-4">{title}</div>
-          <p className="text-base h-[48px]">{description}</p>
+          <p className="text-base h-[48px] text-ellipsis overflow-hidden">
+            {description}
+          </p>
           <div
             className="flex flex-row gap-2.5 items-center
          py-6 text-primary-blue font-semibold"

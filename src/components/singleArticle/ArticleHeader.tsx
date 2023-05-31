@@ -35,7 +35,7 @@ const ArticleHeader = ({
   return (
     <div className="flex flex-col justify-between h-[60%] mt-12 ">
       <h1 className="text-base-black font-semibold">{title}</h1>
-      <h2>{description}</h2>
+      <h3>{description}</h3>
       <div className="flex space-x-3">
         {keywords
           ? keywords

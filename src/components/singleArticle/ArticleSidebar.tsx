@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import ArticleTile from "components/articleSection/components/ArticleTile";
 
 interface SidebarData {
