@@ -6,6 +6,8 @@ import Homepage from "pages/Homepage";
 import { ArticleProvider } from "components/articleSection/service/ArticleService";
 import KnowledgeBase from "pages/KnowledgeBase";
 import SearchResult from "pages/SearchResult";
+import ArticlePage from "pages/ArticlePage";
+import ArticlesList from "components/singleArticle/ArticlesList";
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/knowledge-base" element={<KnowledgeBase />} />
           <Route path="/search" element={<SearchResult />} />
-        </Routes>
+          <Route path="/articles" element={<ArticlesList />} />
+        <Route path="/articles/:slug" element={<ArticlePage />} />
+      </Routes>
         <Footer />
       </ArticleProvider>
     </>
