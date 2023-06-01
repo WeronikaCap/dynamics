@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useIsAuthenticated } from "@azure/msal-react";
 import { useArticleService } from "service/ArticleService";
 import ArticleSlider from "./ArticleSlider";
