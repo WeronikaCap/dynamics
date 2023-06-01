@@ -4,7 +4,6 @@ import BoxWrapper from "components/SearchResult/BoxWrapper";
 import RadioGroupBox from "components/SearchResult/RadioGroupBox";
 import CheckboxGroupBox from "components/SearchResult/CheckboxGroupBox";
 
-// import data from "components/articleSection/mock.json";
 import { useArticleService } from "service/ArticleService";
 
 const SearchResultSection = () => {
@@ -63,7 +62,7 @@ const SearchResultSection = () => {
                 ratingCount={item.rating_count}
                 description={item.description}
                 createdon={item.createdon}
-                wideVariant={true}
+                wideVariant
               />
             ))}
           </div>
