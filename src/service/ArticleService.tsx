@@ -8,6 +8,7 @@ export const getURI = (endpoint: string) =>
 export interface ArticleService {
   articles: KnowledgeArticleResponse | undefined;
   loading: boolean;
+  setSorting: (value: string) => void;
 }
 
 export const ArticleContext = createContext<ArticleService>(
@@ -19,6 +20,7 @@ export const useArticles = () => {
   const { instance, accounts } = useMsal();
   const [articles, setArticles] = useState<KnowledgeArticleResponse>();
   const [loading, setLoading] = useState<boolean>(true);
+  const [sorting, setSorting] = useState<string>("");
 
   const tokenRequest = {
     account: accounts[0],
@@ -31,7 +33,7 @@ export const useArticles = () => {
       await instance.acquireTokenSilent(tokenRequest).then((response) => {
         myHeaders.append("Authorization", `Bearer ${response.accessToken}`);
       });
-      return fetch(getURI("knowledgearticles"), {
+      return fetch(getURI(`knowledgearticles${sorting}`), {
         method: "GET",
         headers: myHeaders,
         redirect: "follow",
@@ -46,11 +48,12 @@ export const useArticles = () => {
         });
     };
     if (isAuthenticated) fetchData();
-  }, [isAuthenticated]);
+  }, [isAuthenticated, sorting]);
 
   return {
     articles,
     loading,
+    setSorting,
   };
 };
 
