@@ -5,7 +5,7 @@ interface Article {
   title: string;
   description: string;
   keywords: string;
-  img: string;
+  img?: string;
   createdon: string;
   rating: number;
   rating_count: number;

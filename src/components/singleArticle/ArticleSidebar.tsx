@@ -3,7 +3,6 @@ import ArticleTile from "components/articleSection/ArticleTile";
 interface SidebarData {
   title: string;
   description: string;
-  knowledgearticleid: string;
 }
 
 const ArticleSidebar = ({ data }: { data: SidebarData[] }) => {
@@ -14,7 +13,7 @@ const ArticleSidebar = ({ data }: { data: SidebarData[] }) => {
       <h2 className="m-4 text-black font-medium text-lg">Related Articles</h2>
       {sidebarData.map((article: SidebarData, id: number) => (
         <ArticleTile
-          key={article.knowledgearticleid}
+          key={id}
           id={id}
           sidebar
           title={article.title}

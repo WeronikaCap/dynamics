@@ -5,6 +5,7 @@ import ArticleSlider from "./ArticleSlider";
 import ArticleTile from "./ArticleTile";
 import ArticleHeader from "./ArticleHeader";
 import ContentContainer from "components/Layout/ContentContainer";
+import { Button } from "@mui/material";
 
 const ArticleSection = () => {
   const { articles } = useArticleService();
@@ -43,9 +44,13 @@ const ArticleSection = () => {
         </>
       )}
       {articles && (
-        <button className="my-11 bg-primary-blue text-white">
+        <Button
+          href="/search"
+          variant="contained"
+          className="font-semibold capitalize my-11 py-3"
+        >
           Read More Articles
-        </button>
+        </Button>
       )}
     </ContentContainer>
   );
