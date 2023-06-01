@@ -6,7 +6,8 @@ export const getURI = (endpoint: string) =>
   `https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/${endpoint}`;
 
 export interface ArticleService {
-  articles: KnowledgeArticleResponse | undefined
+  articles: KnowledgeArticleResponse | undefined;
+  loading: boolean;
 }
 
 export const ArticleContext = createContext<ArticleService>(
@@ -17,6 +18,7 @@ export const useArticles = () => {
   const isAuthenticated = useIsAuthenticated();
   const { instance, accounts } = useMsal();
   const [articles, setArticles] = useState<KnowledgeArticleResponse>();
+  const [loading, setLoading] = useState<boolean>(true);
 
   const tokenRequest = {
     account: accounts[0],
@@ -37,6 +39,7 @@ export const useArticles = () => {
         .then((response) => response.json())
         .then((articles) => {
           setArticles(articles);
+          setLoading(false);
         })
         .catch((e) => {
           throw e;
@@ -47,6 +50,7 @@ export const useArticles = () => {
 
   return {
     articles,
+    loading,
   };
 };
 
