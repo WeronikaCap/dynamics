@@ -47,7 +47,7 @@ const ArticleSection = () => {
         <Button
           href="/search"
           variant="contained"
-          className="font-semibold capitalize my-11 py-3"
+          className="font-semibold capitalize my-11 py-3 text-white"
         >
           Read More Articles
         </Button>
