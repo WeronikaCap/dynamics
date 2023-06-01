@@ -1,12 +1,18 @@
-import ArticleTile from "components/articleSection/components/ArticleTile";
+import ArticleTile from "components/articleSection/ArticleTile";
 import ContentContainer from "components/Layout/ContentContainer";
 import BoxWrapper from "components/SearchResult/BoxWrapper";
 import RadioGroupBox from "components/SearchResult/RadioGroupBox";
 import CheckboxGroupBox from "components/SearchResult/CheckboxGroupBox";
 
-import data from "components/articleSection/mock.json";
+import { useArticleService } from "service/ArticleService";
 
 const SearchResultSection = () => {
+  const { articles } = useArticleService();
+
+  if (!articles) return null;
+
+  const data = articles.value;
+
   return (
     <section className="bg-neutral-gray pt-16 pb-16">
       <ContentContainer>
@@ -45,17 +51,18 @@ const SearchResultSection = () => {
             </BoxWrapper>
           </div>
           <div className="flex flex-col gap-3">
-            {data.map((item) => (
+            {data.map((item, id) => (
               <ArticleTile
-                key={item.id}
+                key={id}
+                id={id}
                 type={item.__typename}
                 title={item.title}
-                image={item.image}
+                image={"https://picsum.photos/450/200"}
                 rating={item.rating}
-                ratingCount={item.ratingCount}
-                description={item.content}
-                publicationDate={item.publicationDate}
-                wideVariant={true}
+                ratingCount={item.rating_count}
+                description={item.description}
+                createdon={item.createdon}
+                wideVariant
               />
             ))}
           </div>
