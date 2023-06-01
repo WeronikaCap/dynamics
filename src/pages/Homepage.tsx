@@ -1,5 +1,5 @@
 import Header from "components/Layout/Header";
-import ArticleSection from "components/articleSection/components/ArticleSection";
+import ArticleSection from "components/articleSection/ArticleSection";
 
 const Homepage = () => {
   return (

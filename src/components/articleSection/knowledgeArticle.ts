@@ -3,10 +3,12 @@ export interface KnowledgeArticle {
   __typename: string;
   title: string;
   rating: number;
-  ratingCount: number;
+  rating_count: number;
   content: string;
   description: string;
   createdon: string;
+  _createdby_value: string;
+  keywords:string;
 }
 
 export interface KnowledgeArticleResponse {

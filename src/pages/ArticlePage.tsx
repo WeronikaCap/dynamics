@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useIsAuthenticated, useMsal } from "@azure/msal-react";
+import { useArticleService } from "service/ArticleService";
 import ContentContainer from "components/Layout/ContentContainer";
 import ArticleHeader from "../components/singleArticle/ArticleHeader";
 import ArticleContent from "../components/singleArticle/ArticleContent";
@@ -8,10 +9,10 @@ import ArticleSidebar from "../components/singleArticle/ArticleSidebar";
 import "./ArticlePage.css";
 
 const ArticlePage = () => {
+  const [contacts, setContacts] = useState<any[]>();
+  const { articles } = useArticleService();
   const { instance, accounts } = useMsal();
   const isAuthenticated = useIsAuthenticated();
-  const [data, setData] = useState<any[]>();
-  const [contacts, setContacts] = useState<any[]>();
   const { slug } = useParams<any>();
 
   const tokenRequest = {
@@ -22,20 +23,8 @@ const ArticlePage = () => {
   useEffect(() => {
     if (isAuthenticated) {
       instance.acquireTokenSilent(tokenRequest).then((response) => {
-        // Call your API with the access token and return the data you need to save in state
         let myHeaders = new Headers();
         myHeaders.append("Authorization", `Bearer ${response.accessToken}`);
-        fetch(
-          "https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/knowledgearticles?$orderby=knowledgearticleviews%20desc",
-          {
-            method: "GET",
-            headers: myHeaders,
-            redirect: "follow",
-          }
-        )
-          .then((response) => response.json())
-          .then((result) => setData(result.value))
-          .catch((error) => console.log("error", error));
         fetch(
           "https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/contacts",
           {
@@ -51,7 +40,9 @@ const ArticlePage = () => {
     }
   }, [isAuthenticated]);
 
-  if (!data || !slug || !contacts) return null;
+  if (!articles || !slug || !contacts) return null;
+
+  const data = articles.value;
 
   const articleId = Number(slug);
 
