@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/knowledge-base" element={<KnowledgeBase />} />
-          <Route path="/search" element={<SearchResult />} />
+          <Route path="/search/:slug" element={<SearchResult />} />
         </Routes>
         <Footer />
       </ArticleProvider>

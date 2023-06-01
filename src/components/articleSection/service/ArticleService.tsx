@@ -1,4 +1,4 @@
-import { createContext, useContext, FC } from "react";
+import { createContext, useContext, FC, useState } from "react";
 import { KnowledgeArticleResponse } from "../knowledgeArticle";
 import { useMsal } from "@azure/msal-react";
 
@@ -6,7 +6,7 @@ export const getURI = (endpoint: string) =>
   `https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/${endpoint}`;
 
 export interface ArticleService {
-  getAll: () => Promise<KnowledgeArticleResponse>;
+  getAll: (url: string) => Promise<KnowledgeArticleResponse>;
 }
 
 export const ArticleContext = createContext<ArticleService>(
@@ -20,16 +20,19 @@ export const useArticles = () => {
     scopes: ["https://capgeminidcxnl.crm4.dynamics.com/user_impersonation"],
   };
 
-  const getAll: ArticleService["getAll"] = async () => {
+  const getAll: ArticleService["getAll"] = async (url: string) => {
     let myHeaders = new Headers();
     await instance.acquireTokenSilent(tokenRequest).then((response) => {
       myHeaders.append("Authorization", `Bearer ${response.accessToken}`);
     });
-    return fetch(getURI("knowledgearticles"), {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    })
+    return fetch(
+      `https://capgeminidcxnl.api.crm4.dynamics.com/api/data/v9.2/${url}`,
+      {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+      }
+    )
       .then((response) => response.json())
       .then((articles) => {
         return articles;

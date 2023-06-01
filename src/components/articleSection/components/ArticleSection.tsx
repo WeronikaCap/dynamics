@@ -14,7 +14,7 @@ const ArticleSection = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      getAll().then((articles: KnowledgeArticleResponse) => {
+      getAll("knowledgearticles").then((articles: KnowledgeArticleResponse) => {
         setArticles(articles);
       });
     }
