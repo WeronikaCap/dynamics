@@ -9,6 +9,7 @@ export interface ArticleService {
   articles: KnowledgeArticleResponse | undefined;
   loading: boolean;
   setSorting: (value: string) => void;
+  articlesCount: number;
 }
 
 export const ArticleContext = createContext<ArticleService>(
@@ -21,6 +22,7 @@ export const useArticles = () => {
   const [articles, setArticles] = useState<KnowledgeArticleResponse>();
   const [loading, setLoading] = useState<boolean>(true);
   const [sorting, setSorting] = useState<string>("");
+  const [articlesCount, setArticlesCount] = useState<number>(0);
 
   const tokenRequest = {
     account: accounts[0],
@@ -41,6 +43,7 @@ export const useArticles = () => {
         .then((response) => response.json())
         .then((articles) => {
           setArticles(articles);
+          setArticlesCount(articles.value.length);
           setLoading(false);
         })
         .catch((e) => {
@@ -52,6 +55,7 @@ export const useArticles = () => {
 
   return {
     articles,
+    articlesCount,
     loading,
     setSorting,
   };

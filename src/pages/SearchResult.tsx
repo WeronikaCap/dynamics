@@ -1,12 +1,16 @@
 import Header from "components/Layout/Header";
 import SearchResultSection from "components/SearchResult/SearchResultSection";
 
+import { useArticleService } from "service/ArticleService";
+
 const SearchResult = () => {
+  const { articlesCount } = useArticleService();
+
   return (
     <>
       <Header
         placeHolderText="Search the knowledge base..."
-        title="2 Search Results for “Adidas”"
+        title={`${articlesCount} Search Results for`}
         backgroundImage="/src/assets/HeroBg-searchPage.jpg"
         variantSmall={true}
       />
