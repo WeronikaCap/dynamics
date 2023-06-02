@@ -10,7 +10,7 @@ const SearchResult = () => {
     <>
       <Header
         placeHolderText="Search the knowledge base..."
-        title={`${articlesCount} Search Results for`}
+        title={`${articlesCount} Search Results`}
         backgroundImage="/src/assets/HeroBg-searchPage.jpg"
         variantSmall={true}
       />
