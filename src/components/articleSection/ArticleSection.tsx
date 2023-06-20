@@ -50,7 +50,7 @@ const ArticleSection = () => {
                       />
                     );
                   })}
-              </ArticleSlider><div className="red">asdasdasdasdasd</div>
+              </ArticleSlider>
               <div className="flex flex-row justify-center w-full">
                 <Button
                   href="/search"
