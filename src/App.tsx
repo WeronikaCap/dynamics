@@ -8,7 +8,7 @@ import KnowledgeBase from "pages/KnowledgeBase";
 import SearchResult from "pages/SearchResult";
 import ArticlePage from "pages/ArticlePage";
 import ArticlesList from "components/singleArticle/ArticlesList";
-
+import "./App.css"
 function App() {
   return (
     <>
