@@ -1,8 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import "./index.css";
 import { PublicClientApplication } from "@azure/msal-browser";
 import { MsalProvider } from "@azure/msal-react";
 import { msalConfig } from "./auth/authConfig";
@@ -13,11 +13,10 @@ const publicClientApplication = new PublicClientApplication(msalConfig);
 // Wrap your app component tree in the MsalProvider component
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <MsalProvider instance={publicClientApplication}>
+    <MsalProvider instance={publicClientApplication}>
+      <BrowserRouter>
         <App />
-      </MsalProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
-)
-
+      </BrowserRouter>
+    </MsalProvider>
+  </React.StrictMode>
+);
